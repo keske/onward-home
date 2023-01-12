@@ -33,6 +33,10 @@ const StartDialog = React.forwardRef<DialogRef, Props>(
 
         handleStart();
 
+        /**
+         * Work in progress
+         *
+         * @ts-expect-error */
         ref?.current?.close();
       },
       [handleStart, ref, updateBucket],

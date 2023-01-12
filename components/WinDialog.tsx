@@ -19,6 +19,10 @@ const WinDialog = React.forwardRef<DialogRef, Props>(({ ...props }, ref) => {
     resetBuckets();
     resetGame();
 
+    /**
+     * Work in progress
+     *
+     * @ts-expect-error */
     ref.current?.close();
   }, [ref, resetBuckets, resetGame]);
 

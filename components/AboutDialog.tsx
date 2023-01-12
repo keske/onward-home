@@ -11,6 +11,10 @@ type Props = React.PropsWithChildren & {
 
 const AboutDialog = React.forwardRef<DialogRef, Props>(({ ...props }, ref) => {
   const handleClose = React.useCallback(() => {
+    /**
+     * Work in progress
+     *
+     * @ts-expect-error */
     ref.current?.close();
   }, [ref]);
 

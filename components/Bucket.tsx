@@ -84,6 +84,10 @@ const Bucket = React.forwardRef<React.ExoticComponent<HTMLDivElement>, Props>(
           "flex cursor-grab flex-row gap-3",
           bucket.label === selectedBucket?.label && "z-50",
         )}
+        /**
+         * Work in progress
+         *
+         * @ts-expect-error */
         ref={ref}
         style={{
           ...transformStyles,
