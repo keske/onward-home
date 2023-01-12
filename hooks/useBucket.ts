@@ -30,9 +30,6 @@ const useBucket = (): Result => {
       const isSelctedBucketGreater =
         selectedBucket.contains >= notSelectedBucketRemain;
 
-      console.log("transfer to bucket: ", toBucket.label);
-      console.log("isSelctedBucketGreater: ", isSelctedBucketGreater);
-
       updateBucket(
         {
           contains: isSelctedBucketGreater
