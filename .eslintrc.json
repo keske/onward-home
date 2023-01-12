@@ -1,0 +1,182 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:typescript-sort-keys/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "hooks",
+    "import",
+    "sort-keys-fix",
+    "react",
+    "react-hooks",
+    "sort-destructure-keys",
+    "tailwindcss",
+    "typescript-sort-keys",
+    "sort-exports"
+  ],
+  "root": true,
+  "overrides": [
+    {
+      "files": ["graphql/*.tsx", "utilities/*.[ts,tsx]"],
+      "rules": {
+        "sort-exports/sort-exports": [
+          "error",
+          {
+            "sortDir": "asc"
+          }
+        ]
+      }
+    }
+  ],
+  "rules": {
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "array-simple"
+      }
+    ],
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/ban-types": ["error"],
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/method-signature-style": ["error", "property"],
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/prefer-function-type": "error",
+    "@typescript-eslint/quotes": 0,
+    "@typescript-eslint/sort-type-union-intersection-members": "error",
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "comma-dangle": ["error", "always-multiline"],
+    "curly": "error",
+    "function-paren-newline": 0,
+    "hooks/sort": [
+      2,
+      {
+        "groups": [
+          "useReducer",
+          "useContext",
+          "useRef",
+          "useState",
+          "useDispatch",
+          "useCallback",
+          "useImperativeHandle",
+          "useEffect"
+        ]
+      }
+    ],
+    "implicit-arrow-linebreak": 0,
+    "import/extensions": 0,
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "external",
+          "internal",
+          "index",
+          "sibling",
+          "parent",
+          "builtin",
+          "object",
+          "type"
+        ],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "comments": 180,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreUrls": true
+      }
+    ],
+    "newline-before-return": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 0
+      }
+    ],
+    "object-curly-newline": 0,
+    "operator-linebreak": 0,
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "next": "*",
+        "prev": ["case", "const", "default", "if", "let", "return"]
+      },
+      {
+        "blankLine": "always",
+        "next": "*",
+        "prev": ["if", "return"]
+      }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-curly-newline": [
+      0,
+      {
+        "multiline": "consistent",
+        "singleline": "consistent"
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      1,
+      {
+        "maximum": 5,
+        "when": "always"
+      }
+    ],
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-sort-props": "error",
+    "react/jsx-wrap-multilines": [
+      1,
+      {
+        "arrow": "parens",
+        "assignment": "parens",
+        "condition": "parens-new-line",
+        "declaration": "parens",
+        "logical": "parens",
+        "prop": "parens",
+        "return": "parens"
+      }
+    ],
+    "react/no-array-index-key": 0,
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": 0,
+    "sort-destructure-keys/sort-destructure-keys": "error",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ],
+    "sort-keys": "error",
+    "sort-keys-fix/sort-keys-fix": "error",
+    "space-before-function-paren": 0,
+    "tailwindcss/no-custom-classname": 0
+  }
+}
