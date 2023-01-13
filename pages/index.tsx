@@ -111,6 +111,7 @@ const Home: NextPage = () => {
             { label: selectedBucket.label, type: "bucket" },
             { label: solveBucket.label, type: "bucket" },
             "dump",
+            false,
           );
         }
       }

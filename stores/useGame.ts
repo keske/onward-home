@@ -18,9 +18,11 @@ export type Store = {
       type: Type;
     },
     action: Action,
+    incStep?: boolean,
   ) => void;
   readonly isStarted: boolean;
   resetGame: () => void;
+  steps: number;
 };
 
 const useGame = create<Store>((set) => ({
@@ -42,8 +44,9 @@ const useGame = create<Store>((set) => ({
       type: Type;
     },
     action: Action,
+    incStep = true,
   ) => {
-    set(({ history }) => {
+    set(({ history, steps }) => {
       const getMessage = (): string => {
         if (from.type === "bucket") {
           return `Transfer from 🪣 ${from.label?.toLocaleUpperCase()} to 🪣 ${to.label?.toLocaleUpperCase()}`;
@@ -60,6 +63,7 @@ const useGame = create<Store>((set) => ({
 
       return {
         history: R.append(getMessage(), history),
+        steps: incStep ? steps + 1 : steps,
       };
     });
   },
@@ -71,6 +75,8 @@ const useGame = create<Store>((set) => ({
       history: [],
     }));
   },
+
+  steps: 0,
 }));
 
 export default useGame;
