@@ -13,7 +13,7 @@ const History: React.FC = () => {
       <ul className="mt-2 flex flex-col gap-2">
         {history.map((item, index) => (
           <li key={index}>
-            <span className="rounded-md bg-white px-2 py-1 text-xs font-semibold first-letter:uppercase">
+            <span className="rounded-md bg-white px-2 py-1 text-xs font-semibold capitalize">
               {item}
             </span>
           </li>
