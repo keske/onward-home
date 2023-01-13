@@ -24,11 +24,11 @@ const Home: NextPage = () => {
 
   const { handleStart, historyAppend, isStarted } = useGame();
 
-  const bucketARef = React.useRef<React.ExoticComponent<HTMLDivElement>>(null);
+  const bucketARef = React.useRef<HTMLDivElement>(null);
 
-  const bucketBRef = React.useRef<React.ExoticComponent<HTMLDivElement>>(null);
+  const bucketBRef = React.useRef<HTMLDivElement>(null);
 
-  const bucketCRef = React.useRef<React.ExoticComponent<HTMLDivElement>>(null);
+  const bucketCRef = React.useRef<HTMLDivElement>(null);
 
   const sceneRef = React.useRef(null);
 

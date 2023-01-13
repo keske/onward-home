@@ -19,7 +19,7 @@ type Props = {
   onDragEnd?: (xy: Vector2) => void;
 };
 
-const Bucket = React.forwardRef<React.ExoticComponent<HTMLDivElement>, Props>(
+const Bucket = React.forwardRef<HTMLDivElement, Props>(
   (
     { bucket, onDrag = () => {}, onDragEnd = () => {}, gestureConfig = {} },
     ref,
@@ -84,10 +84,6 @@ const Bucket = React.forwardRef<React.ExoticComponent<HTMLDivElement>, Props>(
           "flex cursor-grab flex-row gap-3",
           bucket.label === selectedBucket?.label && "z-50",
         )}
-        /**
-         * Work in progress
-         *
-         * @ts-expect-error */
         ref={ref}
         style={{
           ...transformStyles,
