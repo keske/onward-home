@@ -53,7 +53,9 @@ const useGame = create<Store>((set) => ({
         }
 
         if (from.type === "water") {
-          return `${action} 🪣 ${to.label?.toLocaleUpperCase()} ${
+          return `${
+            action.charAt(0).toUpperCase() + action.slice(1)
+          } 🪣 ${to.label?.toLocaleUpperCase()} ${
             action === "dump" ? "to" : "from"
           } 🌊`;
         }
