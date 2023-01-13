@@ -1,4 +1,5 @@
 import React from "react";
+import { useRefComposer } from "react-ref-composer";
 
 import type { DialogRef } from "@/components/Dialog";
 
@@ -10,16 +11,16 @@ type Props = React.PropsWithChildren & {
 };
 
 const AboutDialog = React.forwardRef<DialogRef, Props>(({ ...props }, ref) => {
+  const composeRefs = useRefComposer();
+
+  const dialogRef = React.useRef<DialogRef>();
+
   const handleClose = React.useCallback(() => {
-    /**
-     * Work in progress
-     *
-     * @ts-expect-error */
-    ref.current?.close();
-  }, [ref]);
+    dialogRef?.current?.close();
+  }, []);
 
   return (
-    <Dialog {...props} onClose={handleClose} ref={ref}>
+    <Dialog {...props} onClose={handleClose} ref={composeRefs(ref, dialogRef)}>
       <div className="flex flex-col items-center gap-5">
         <span className="text-8xl">💻</span>
         <span>

@@ -1,5 +1,6 @@
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useRefComposer } from "react-ref-composer";
 
 import type { DialogRef } from "@/components/Dialog";
 
@@ -15,6 +16,10 @@ type Props = React.PropsWithChildren & {
 
 const StartDialog = React.forwardRef<DialogRef, Props>(
   ({ onStart, ...props }, ref) => {
+    const composeRefs = useRefComposer();
+
+    const dialogRef = React.useRef<DialogRef>();
+
     const { buckets, updateBucket } = useBuckets();
 
     const { handleStart } = useGame();
@@ -33,13 +38,9 @@ const StartDialog = React.forwardRef<DialogRef, Props>(
 
         handleStart();
 
-        /**
-         * Work in progress
-         *
-         * @ts-expect-error */
-        ref?.current?.close();
+        dialogRef?.current?.close();
       },
-      [handleStart, ref, updateBucket],
+      [handleStart, updateBucket],
     );
 
     const handleCloseDialog = React.useCallback(() => {
@@ -47,7 +48,11 @@ const StartDialog = React.forwardRef<DialogRef, Props>(
     }, [handleStart]);
 
     return (
-      <Dialog {...props} onClose={handleCloseDialog} ref={ref}>
+      <Dialog
+        {...props}
+        onClose={handleCloseDialog}
+        ref={composeRefs(ref, dialogRef)}
+      >
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col items-center gap-5">
             <div className="flex flex-row gap-5">

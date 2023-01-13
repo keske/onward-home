@@ -2350,6 +2350,11 @@ react-reconciler@^0.27.0:
     loose-envify "^1.1.0"
     scheduler "^0.21.0"
 
+react-ref-composer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-ref-composer/-/react-ref-composer-1.0.1.tgz#0d577ac4a1cbd42e051c8f87fda1eba9173c1f84"
+  integrity sha512-pX8ABSln/Xu4LR/bmU40+sxtY/lv2IQ6xPhFAun5X0l9TkuvPA7a2/TEpfKKzRm9tYFprMSj6z5X0d38wmaYDA==
+
 react-use-measure@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-use-measure/-/react-use-measure-2.1.1.tgz#5824537f4ee01c9469c45d5f7a8446177c6cc4ba"
