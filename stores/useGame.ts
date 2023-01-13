@@ -49,15 +49,18 @@ const useGame = create<Store>((set) => ({
     set(({ history, steps }) => {
       const getMessage = (): string => {
         if (from.type === "bucket") {
-          return `Transfer from 🪣 ${from.label?.toLocaleUpperCase()} to 🪣 ${to.label?.toLocaleUpperCase()}`;
+          return `🪣 ${from.label?.toLocaleUpperCase()} → 🪣 ${to.label?.toLocaleUpperCase()}`;
         }
 
         if (from.type === "water") {
-          return `${
-            action.charAt(0).toUpperCase() + action.slice(1)
-          } 🪣 ${to.label?.toLocaleUpperCase()} ${
-            action === "dump" ? "to" : "from"
-          } 🌊`;
+          return action === "dump"
+            ? `🪣 ${to.label?.toLocaleUpperCase()} → 🌊`
+            : `🌊 ${to.label?.toLocaleUpperCase()} → 🪣`;
+          // return `${
+          //   action.charAt(0).toUpperCase() + action.slice(1)
+          // } 🪣 ${to.label?.toLocaleUpperCase()} ${
+          //   action === "dump" ? "to" : "from"
+          // } 🌊`;
         }
 
         return "";
