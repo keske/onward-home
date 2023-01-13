@@ -25,7 +25,9 @@ const AboutDialog = React.forwardRef<DialogRef, Props>(({ ...props }, ref) => {
         <span>
           By <a href="http://www.andreykeske.com">Andrey Keske</a>
         </span>
-        <span>GitHub Repo</span>
+        <span>
+          <a href="https://github.com/keske/onward-home">GitHub Repo</a>
+        </span>
         <Button onClick={handleClose}>Close</Button>
       </div>
     </Dialog>
