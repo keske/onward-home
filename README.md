@@ -13,7 +13,7 @@ A few words about:
 - For styles here is `tailwind`;
 - Components are written to be ready to scale and for production, for example `<Button />`;
 - I'm using different approaches like `React.useImperativeHandle` to show my understanding of React;
-- Room to improve: tests, ts errors;
+- Room to improve: tests, responsiveness;
 
 ## Run
 
