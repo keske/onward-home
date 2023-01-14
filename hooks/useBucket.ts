@@ -4,13 +4,13 @@ import type { Bucket } from "@/stores/useBuckets";
 
 import { useBuckets } from "@/stores/index";
 
-export type Result = {
+export type UseBucket = {
   selectedBucket: Bucket;
   solveBucket: Bucket;
   transformWaterToBucket: (toBucket: Bucket) => void;
 };
 
-const useBucket = (): Result => {
+export const useBucket = (): UseBucket => {
   const { buckets, updateBucket } = useBuckets();
 
   const selectedBucket = React.useMemo(
@@ -56,5 +56,3 @@ const useBucket = (): Result => {
     transformWaterToBucket,
   };
 };
-
-export default useBucket;

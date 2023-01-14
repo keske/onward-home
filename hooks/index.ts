@@ -1,1 +1,1 @@
-export { default as useBucket } from "./useBucket";
+export * from "./useBucket";

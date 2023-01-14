@@ -17,12 +17,12 @@ const DEFAULT_OPTIONS = {
   waterColor: "#00A3FF",
 };
 
-type Props = MeshProps & {
+export type WaterSurfaceProps = MeshProps & {
   animateUniform: (delta: number) => void;
   waterOptions?: WaterOptions;
 };
 
-const WaterSurface: React.FC<Props> = ({
+export const WaterSurface: React.FC<WaterSurfaceProps> = ({
   animateUniform,
   waterOptions = {},
 }) => {
@@ -62,5 +62,3 @@ const WaterSurface: React.FC<Props> = ({
 };
 
 extend({ Water });
-
-export default WaterSurface;

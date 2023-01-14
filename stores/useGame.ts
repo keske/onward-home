@@ -5,7 +5,7 @@ type Action = "dump" | "fill";
 
 type Type = "bucket" | "water";
 
-export type Store = {
+export type UseGame = {
   handleStart: () => void;
   readonly history: string[];
   historyAppend: (
@@ -25,7 +25,7 @@ export type Store = {
   steps: number;
 };
 
-const useGame = create<Store>((set) => ({
+export const useGame = create<UseGame>((set) => ({
   handleStart: () => {
     set(({ isStarted }) => ({
       isStarted: !isStarted,
@@ -80,5 +80,3 @@ const useGame = create<Store>((set) => ({
 
   steps: 0,
 }));
-
-export default useGame;

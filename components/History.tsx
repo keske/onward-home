@@ -2,7 +2,7 @@ import React from "react";
 
 import { useGame } from "@/stores/index";
 
-const History: React.FC = () => {
+export const History: React.FC = () => {
   const { history, steps } = useGame();
 
   return (
@@ -22,5 +22,3 @@ const History: React.FC = () => {
     </div>
   );
 };
-
-export default History;

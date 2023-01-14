@@ -1,7 +1,7 @@
 import { Dialog as HUIDialog, Transition } from "@headlessui/react";
 import React from "react";
 
-type Props = React.PropsWithChildren & {
+type DialogProps = React.PropsWithChildren & {
   closable?: boolean;
   onClose?: () => void;
   show: boolean;
@@ -10,10 +10,10 @@ type Props = React.PropsWithChildren & {
 
 export type DialogRef = {
   close: () => Promise<void>;
-  open: (props?: React.PropsWithChildren<Props>) => void;
+  open: (props?: React.PropsWithChildren<DialogProps>) => void;
 };
 
-const Dialog = React.forwardRef<DialogRef, Props>(
+export const Dialog = React.forwardRef<DialogRef, DialogProps>(
   ({ children, closable = true, onClose, show, title }, ref) => {
     const onUnmount = React.useRef<() => void>();
 
@@ -103,5 +103,3 @@ const Dialog = React.forwardRef<DialogRef, Props>(
     );
   },
 );
-
-export default Dialog;

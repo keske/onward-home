@@ -1,8 +1,8 @@
 import React from "react";
 
-type Props = React.InputHTMLAttributes<HTMLInputElement>;
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-const Input = React.forwardRef<HTMLInputElement, Props>(
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ children, ...props }, ref) => (
     <input
       {...props}
@@ -11,5 +11,3 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     />
   ),
 );
-
-export default Input;

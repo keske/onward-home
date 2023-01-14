@@ -4,7 +4,7 @@ import clsx from "clsx";
 import * as R from "ramda";
 import React from "react";
 
-import ProgressBar from "./ProgressBar";
+import { ProgressBar } from "./ProgressBar";
 
 import type { Bucket as TBucket } from "@/stores/useBuckets";
 import type { Vector2 } from "@use-gesture/core/dist/declarations/src/types";
@@ -12,14 +12,14 @@ import type { Vector2 } from "@use-gesture/core/dist/declarations/src/types";
 import { useBucket } from "@/hooks/index";
 import { useBuckets } from "@/stores/index";
 
-type Props = {
+export type BucketProps = {
   bucket: TBucket;
   gestureConfig?: UserGestureConfig;
   onDrag?: (xy: Vector2) => void;
   onDragEnd?: (xy: Vector2) => void;
 };
 
-const Bucket = React.forwardRef<HTMLDivElement, Props>(
+export const Bucket = React.forwardRef<HTMLDivElement, BucketProps>(
   (
     { bucket, onDrag = () => {}, onDragEnd = () => {}, gestureConfig = {} },
     ref,
@@ -107,5 +107,3 @@ const Bucket = React.forwardRef<HTMLDivElement, Props>(
     );
   },
 );
-
-export default Bucket;

@@ -33,13 +33,13 @@ export type Bucket = {
   size: number;
 };
 
-export type Store = {
+export type UseBuckets = {
   readonly buckets: Bucket[];
   resetBuckets: () => void;
   updateBucket: (data: Partial<Bucket>, label: string) => void;
 };
 
-const useViewMode = create<Store>((set) => ({
+export const useBuckets = create<UseBuckets>((set) => ({
   buckets: DEFAULT_STATE,
 
   resetBuckets: () => {
@@ -56,5 +56,3 @@ const useViewMode = create<Store>((set) => ({
     }));
   },
 }));
-
-export default useViewMode;

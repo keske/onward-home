@@ -7,14 +7,14 @@ import type { DialogRef } from "@/components/Dialog";
 import { Button, Dialog, Input } from "@/components/index";
 import { useBuckets, useGame } from "@/stores/index";
 
-type Props = React.PropsWithChildren & {
+export type StartDialogProps = React.PropsWithChildren & {
   closable?: boolean;
   onStart: () => void;
   show: boolean;
   title: string;
 };
 
-const StartDialog = React.forwardRef<DialogRef, Props>(
+export const StartDialog = React.forwardRef<DialogRef, StartDialogProps>(
   ({ onStart, ...props }, ref) => {
     const composeRefs = useRefComposer();
 
@@ -84,5 +84,3 @@ const StartDialog = React.forwardRef<DialogRef, Props>(
     );
   },
 );
-
-export default StartDialog;
