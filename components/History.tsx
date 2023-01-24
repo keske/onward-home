@@ -3,12 +3,12 @@ import React from "react";
 import { useGame } from "@/stores/index";
 
 export const History: React.FC = () => {
-  const { history, steps } = useGame();
+  const { history } = useGame();
 
   return (
     <div className="absolute left-5 top-5 z-10">
       <div className="text-2xl font-bold uppercase text-white">
-        Steps: {steps}
+        Steps: {history.length}
       </div>
       <ul className="mt-2 flex flex-col gap-2">
         {history.map((item, index) => (

@@ -1,4 +1,4 @@
-import { Sky } from "@react-three/drei";
+import { OrbitControls, Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 import React from "react";
@@ -27,6 +27,7 @@ export const Scene = React.forwardRef<HTMLCanvasElement, SceneProps>(
           sunPosition={[0, 1, 3]}
         />
         <WaterSurface animateUniform={handleAnimateUniform} />
+        <OrbitControls />
       </Canvas>
     );
   },
