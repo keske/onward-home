@@ -1,7 +1,7 @@
 import { Dialog as HUIDialog, Transition } from "@headlessui/react";
 import React from "react";
 
-type DialogProps = React.PropsWithChildren & {
+export type DialogProps = React.PropsWithChildren & {
   closable?: boolean;
   onClose?: () => void;
   show: boolean;

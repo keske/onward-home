@@ -1,15 +1,13 @@
 import React from "react";
 import { useRefComposer } from "react-ref-composer";
 
-import type { DialogRef } from "@/components/Dialog";
+import type { DialogProps, DialogRef } from "@/components/Dialog";
 
 import { Button, Dialog } from "@/components/index";
 import { useBuckets, useGame } from "@/stores/index";
 
-export type WinDialogProps = React.PropsWithChildren & {
-  show: boolean;
-  title: string;
-};
+export type WinDialogProps = Pick<DialogProps, "show" | "title"> &
+  React.PropsWithChildren;
 
 export const WinDialog = React.forwardRef<DialogRef, WinDialogProps>(
   ({ ...props }, ref) => {

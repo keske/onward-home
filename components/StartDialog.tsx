@@ -2,17 +2,18 @@ import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useRefComposer } from "react-ref-composer";
 
-import type { DialogRef } from "@/components/Dialog";
+import type { DialogProps, DialogRef } from "@/components/Dialog";
 
 import { Button, Dialog, Input } from "@/components/index";
 import { useBuckets, useGame } from "@/stores/index";
 
-export type StartDialogProps = React.PropsWithChildren & {
-  closable?: boolean;
-  onStart: () => void;
-  show: boolean;
-  title: string;
-};
+export type StartDialogProps = Pick<
+  DialogProps,
+  "closable" | "show" | "title"
+> &
+  React.PropsWithChildren & {
+    onStart: () => void;
+  };
 
 export const StartDialog = React.forwardRef<DialogRef, StartDialogProps>(
   ({ onStart, ...props }, ref) => {
