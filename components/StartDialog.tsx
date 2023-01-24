@@ -56,8 +56,11 @@ export const StartDialog = React.forwardRef<DialogRef, StartDialogProps>(
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col items-center gap-5">
             <div className="flex flex-row gap-5">
-              {buckets.map((bucket) => (
-                <div className="flex flex-col items-center gap-3 uppercase">
+              {buckets.map((bucket, index) => (
+                <div
+                  className="flex flex-col items-center gap-3 uppercase"
+                  key={index}
+                >
                   <div className="flex items-center justify-center duration-200 hover:scale-105">
                     <div className="relative text-6xl">🪣</div>
                     <div className="absolute">
